@@ -49,7 +49,3 @@ grey() {
 space(){
 echo -e "\n";
 }
-# Function to print bold text
-bold() {
-  echo -e "${BOLD}$1${NC}"
-}

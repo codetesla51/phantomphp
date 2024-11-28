@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Main logic to process flags
 while [ "$1" != "" ]; do
   case $1 in
@@ -18,7 +17,7 @@ fi
 version=$(cat "$version_file")
 grey "########################################"
 blue "#                                      #"
-green "#      phantomphp version: $version        #"
+green "#      phantomphp version: $version       #"
 cyan "#                                      #"
 grey "########################################"
 
@@ -46,19 +45,20 @@ grey "########################################"
       fi
       ;;
     -i | --install)
-      INSTALL=true
+    phantomInstall
       ;;
     -g | --github)
-      echo "Opening GitHub Repository..."
+    space
+      grey "Opening GitHub Repository..."
       if ! xdg-open "https://github.com/codetesla51/phantom-php" &> /dev/null; then
-        echo "Failed to open GitHub repository."
+        red "Failed to open GitHub repository."
       fi
       exit 0
       ;;
     -R | --run | -r)
       shift
       if [[ -z "$1" || "$1" =~ ^- ]]; then
-        echo "Error: Missing file name for -R or -r."
+        red "Error: Missing file name for -R or -r."
         exit 1
       fi
       FILE=$1
@@ -68,14 +68,12 @@ grey "########################################"
     -D | --db | --mysql)
       shift
       if [[ -z "$1" || "$1" =~ ^- ]]; then
-        echo "Error: Missing port number for -D or --db."
+        red "Error: Missing port number for -D or --db."
         exit 1
       fi
       PORT=$1
       validate_port
       mysql_db
-      SHOW_LOGO=false
-      INSTALL=false
       ;;
     *)
       echo "Invalid option: $1"

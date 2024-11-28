@@ -55,12 +55,12 @@ port_forwarding(){
             red "➔ SSH tunnel has been closed. Please restart it manually."
             red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
             red "➔ The PHP server may still be running, but the tunnel has stopped."
-            red "➔ Run the command 'bash <script_name>.sh' to restart the tunnel."
+            red "➔ Restart the tunnel."
             space
             break
         fi
         grey "➔ SSH tunnel is running... Press [Ctrl+C] to stop."
-        sleep 10  # Check every 5 seconds
+        sleep 60
     done
 }
 
