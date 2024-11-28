@@ -11,7 +11,7 @@
 # A versatile and efficient PHP server for Termux, designed to empower        #
 # developers with features that streamline PHP app development.               #
 #                                                                             #
-# Features:                                                                   #
+# Features:
 #    • Port Forwarding: Effortlessly forward ports for external access.       #
 #    • Port Selection: Flexible port assignment, including auto-configuration.#
 #    • phpMyAdmin Integration: Easy database management from Termux.          #
@@ -50,6 +50,3 @@ source "$BASEDIR/helper/validate_port"
 source "$BASEDIR/utils/flags"
 source "$BASEDIR/utils/echo"
 source "$BASEDIR/config"
-if [ "$SERVE" = "true" ]; then
-serve "$PORT" "$DIRECTORY"
-fi
