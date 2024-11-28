@@ -24,13 +24,8 @@ grey "########################################"
       ;;
     -s | --serve | -p | --port)
       shift
-      if [[ -z "$1" || "$1" =~ ^- ]]; then
-        red "Error: Missing port number for -s or -p."
-        exit 1
-      fi
-      PORT=$1
-      serve "$PORT" "$DIRECTORY"
-
+      PORT=${1:-8000}
+      SERVE=true
       ;;
     -d | --dir)
       shift
@@ -46,8 +41,10 @@ grey "########################################"
       ;;
     -i | --install)
     phantomInstall
+    SERVE=false
       ;;
     -g | --github)
+        SERVE=false
     space
       grey "Opening GitHub Repository..."
       if ! xdg-open "https://github.com/codetesla51/phantom-php" &> /dev/null; then
@@ -83,3 +80,6 @@ grey "########################################"
   esac
   shift
 done
+if [ "$SERVE" = "true" ]; then
+serve "$PORT" "$DIRECTORY"
+fi

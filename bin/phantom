@@ -50,3 +50,6 @@ source "$BASEDIR/helper/validate_port"
 source "$BASEDIR/utils/flags"
 source "$BASEDIR/utils/echo"
 source "$BASEDIR/config"
+if [ "$SERVE" = "true" ]; then
+serve "$PORT" "$DIRECTORY"
+fi
