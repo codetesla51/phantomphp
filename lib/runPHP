@@ -1,0 +1,27 @@
+#!/bin/bash
+
+script_run() {
+    file="$1.php"
+
+    # Inform the user that the script is attempting to run
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    green "➔ Attempting to run: $file"
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    space
+
+    # Check if the file exists
+    if [ -f "$file" ]; then
+        # If the file exists, run the PHP script
+        green "➔ Running $file..."
+        space
+        php "$file"
+    else
+        # If the file doesn't exist, display an error
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ File $file not found."
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        space
+        exit 1
+    fi
+}
+

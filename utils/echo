@@ -1,0 +1,55 @@
+ #!/bin/bash
+
+# Define color codes for text formatting
+RED='\033[1;91m'
+GREEN='\033[1;92m'
+YELLOW='\033[1;93m'
+BLUE='\033[1;94m'
+CYAN='\033[1;96m'
+MAGENTA='\033[1;95m'
+GREY='\033[1;90m'
+BOLD='\033[1m'       # Bold text
+NC='\033[0m'         # Reset to no color
+
+# Function to print text in red
+red() {
+  echo -e "${RED}$1${NC}"
+}
+
+# Function to print text in green
+green() {
+  echo -e "${GREEN}$1${NC}"
+}
+
+# Function to print text in yellow
+yellow() {
+  echo -e "${YELLOW}$1${NC}"
+}
+
+# Function to print text in blue
+blue() {
+  echo -e "${BLUE}$1${NC}"
+}
+
+# Function to print text in cyan
+cyan() {
+  echo -e "${CYAN}$1${NC}"
+}
+
+# Function to print text in magenta
+magenta() {
+  echo -e "${MAGENTA}$1${NC}"
+}
+
+# Function to print text in grey
+grey() {
+  echo -e "${GREY}$1${NC}"
+}
+
+space(){
+echo -e "\n";
+}
+# Function to print bold text
+bold() {
+  echo -e "${BOLD}$1${NC}"
+}

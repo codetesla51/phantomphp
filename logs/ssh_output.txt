@@ -1,0 +1,3 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+kex_exchange_identification: read: Software caused connection abort
+banner exchange: Connection to 138.68.79.95 port 22: Software caused connection abort

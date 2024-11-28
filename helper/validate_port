@@ -1,0 +1,8 @@
+#!#/bin/bash
+validate_port() {
+    if ! [[ "$PORT" =~ ^[0-9]+$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; then
+        echo -e "${RED}Invalid PORT number. Please specify a PORT between 1 and 65535.${NC}"
+        exit 1
+    fi
+    
+}

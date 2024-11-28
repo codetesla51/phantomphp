@@ -1,0 +1,87 @@
+#!/bin/bash
+
+# Main logic to process flags
+while [ "$1" != "" ]; do
+  case $1 in
+    -h | --help)
+      show_help
+      exit 0
+      ;;
+    -v | --version)
+  
+  version_file="$HOME/phantomphp/version"
+
+# Check if the version file exists, if not, create it
+if [[ ! -f "$version_file" ]]; then
+  echo "1.0.0" > "$version_file"
+fi
+version=$(cat "$version_file")
+grey "########################################"
+blue "#                                      #"
+green "#      phantomphp version: $version        #"
+cyan "#                                      #"
+grey "########################################"
+
+      ;;
+    -s | --serve | -p | --port)
+      shift
+      if [[ -z "$1" || "$1" =~ ^- ]]; then
+        red "Error: Missing port number for -s or -p."
+        exit 1
+      fi
+      PORT=$1
+      serve "$PORT" "$DIRECTORY"
+
+      ;;
+    -d | --dir)
+      shift
+      if [[ -z "$1" || "$1" =~ ^- ]]; then
+        red "Error: Missing directory path for -d."
+        exit 1
+      fi
+      DIRECTORY=$1
+      if [ ! -d "$DIRECTORY" ]; then
+        red "Error: Directory $DIRECTORY does not exist."
+        exit 1
+      fi
+      ;;
+    -i | --install)
+      INSTALL=true
+      ;;
+    -g | --github)
+      echo "Opening GitHub Repository..."
+      if ! xdg-open "https://github.com/codetesla51/phantom-php" &> /dev/null; then
+        echo "Failed to open GitHub repository."
+      fi
+      exit 0
+      ;;
+    -R | --run | -r)
+      shift
+      if [[ -z "$1" || "$1" =~ ^- ]]; then
+        echo "Error: Missing file name for -R or -r."
+        exit 1
+      fi
+      FILE=$1
+      script_run "$FILE"
+      exit 0
+      ;;
+    -D | --db | --mysql)
+      shift
+      if [[ -z "$1" || "$1" =~ ^- ]]; then
+        echo "Error: Missing port number for -D or --db."
+        exit 1
+      fi
+      PORT=$1
+      validate_port
+      mysql_db
+      SHOW_LOGO=false
+      INSTALL=false
+      ;;
+    *)
+      echo "Invalid option: $1"
+      show_help
+      exit 1
+      ;;
+  esac
+  shift
+done

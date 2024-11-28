@@ -1,0 +1,66 @@
+#!/bin/bash
+source "$BASEDIR/config"
+
+port_forwarding(){
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    green "       Establishing SSH Tunnel...           "
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    space
+    green "➔ Establishing SSH tunnel for PhantomPHP Server...${NC}"
+    space
+
+    # Define SSH output file path
+    ssh_output_file="$BASEDIR/logs/ssh_output.txt"
+
+    if [ ! -f "$ssh_output_file" ]; then
+        touch "$ssh_output_file"
+    fi
+
+    # Start the SSH tunnel
+    ssh_command="ssh -R 80:localhost:$PORT serveo.net > $ssh_output_file 2>&1 &"
+    eval $ssh_command
+    sleep 2
+
+    # Extract the tunnel URL
+    tunnel_url=""
+    while [ -z "$tunnel_url" ]; do
+        if [ -f "$ssh_output_file" ]; then
+            tunnel_url=$(grep -o "https://[^\s]*serveo.net" "$ssh_output_file")
+            if [ ! -z "$tunnel_url" ]; then
+                green "➔ Tunnel URL: ${CYAN}$tunnel_url${NC} ✔"
+                break
+            fi
+        fi
+        sleep 1
+    done
+
+    if [ -z "$tunnel_url" ]; then
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ Failed to establish SSH tunnel. Check $ssh_output_file for details."
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        grey "➔ SSH Output Log:"
+        cat "$ssh_output_file"
+    else
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        green "➔ SSH Tunnel established successfully! ✔"
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        green "➔ You can now access your server at: ${CYAN}$tunnel_url${NC}"
+        space
+    fi
+
+    # Keep the tunnel running indefinitely and provide feedback
+    while true; do
+        if ! pgrep -f "ssh -R 80:localhost:$PORT serveo.net" > /dev/null; then
+            red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            red "➔ SSH tunnel has been closed. Please restart it manually."
+            red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            red "➔ The PHP server may still be running, but the tunnel has stopped."
+            red "➔ Run the command 'bash <script_name>.sh' to restart the tunnel."
+            space
+            break
+        fi
+        grey "➔ SSH tunnel is running... Press [Ctrl+C] to stop."
+        sleep 10  # Check every 5 seconds
+    done
+}
+

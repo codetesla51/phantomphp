@@ -1,0 +1,55 @@
+#!/bin/bash
+source "$BASEDIR/utils/echo"
+
+show_help() {
+  echo -e "${GREEN}
+           ▄▄▄▄▄▄▄▄▄▄▄▄
+        ▄█▀▀▀▀▀▀▀▀▀▀▀▀▀█▄
+      ▄█▀     ▄▄▄▄▄▄     ▀█▄
+     ██     ██████████     ██
+    ██      ██████████      ██
+     ██     ██████████     ██
+       ▀█▄    ▀████▀    ▄█▀
+          ▀▀▀▄▄▄▄▄▄▄▀▀▀
+
+         PhantomPHP Server
+         Fast and Reliable.
+
+         Made by Uthman Dev
+  ${NC}"
+  echo -e "\n"
+  
+  # Title and description
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  green "      PhantomPHP - Command Help Guide      "
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo -e ""
+
+  # Usage information
+  cyan "Usage:"
+  yellow "  $0 [OPTIONS]"
+  echo -e ""
+
+  # Options section with vertical line
+  cyan "OPTIONS:"
+  green "  -h, --help     │ $yellow Show this help message"
+  green "  -v, --version  │ $yellow Show PhantomPHP version"
+  green "  -s, --serve    │ $yellow Serve on a specific port"
+  green "  -i, --install  │ $yellow Install PhantomPHP server"
+  green "  -d, --dir      │ $yellow Set the directory for the app"
+  green "  -g, --github   │ $yellow Open PhantomPHP GitHub repository"
+  green "  -R, --run      │ $yellow Run a specific PHP script"
+  green "  -D, --db       │ $yellow Enable PHPMyAdmin"
+  echo -e ""
+
+  # Examples section with clearer explanations
+  cyan "Examples:"
+  magenta "  phantom -s | -p 8080 │ $yellow Serve the app on port 8080"
+  magenta "  phantom -i           │ $yellow Install PhantomPHP server"
+  magenta "  phantom-g            │ $yellow Open the GitHub repository"
+  magenta "  phantom -D 3306      │ $yellow Enable PHPMyAdmin on port 3306"
+  echo -e ""
+
+  # Additional note
+  cyan "For more details, visit the PhantomPHP documentation."
+}

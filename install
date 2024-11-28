@@ -1,0 +1,299 @@
+#!/bin/bash
+
+# Load utility for colored output
+source "$HOME/phantomphp/utils/echo"
+
+# Function to install the server
+install_server() {
+  clear
+  sleep 2
+    echo -e "${GREEN}
+           ▄▄▄▄▄▄▄▄▄▄▄▄
+        ▄█▀▀▀▀▀▀▀▀▀▀▀▀▀█▄
+      ▄█▀     ▄▄▄▄▄▄     ▀█▄
+     ██     ██████████     ██
+    ██      ██████████      ██
+     ██     ██████████     ██
+       ▀█▄    ▀████▀    ▄█▀u
+          ▀▀▀▄▄▄▄▄▄▄▀▀▀
+
+         PhantomPHP Server
+         Fast and Reliable.
+
+         Made by Uthman Dev
+    ${NC}"
+    echo -e "\n"
+    
+  set -e
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  green "       🌟 Installing Phantom-PHP 🌟        "
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  space
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  blue " Checking Dependencies..."
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  sleep 1
+
+  # Check PHP installation
+  blue "➔ Checking if PHP is installed..."
+  space
+  sleep 1
+
+  if command -v php >/dev/null 2>&1; then
+    green "✔ PHP is installed\n"
+  else
+    red "✘ PHP is not installed!"
+    read -p "👉 Would you like to install PHP now? (y/n): " choice
+    if [[ "$choice" =~ ^[yY]$ ]]; then
+      yellow "🚀 Installing PHP..."
+      apt install php -y
+      until command -v php >/dev/null 2>&1; do
+        sleep 1
+      done
+      green "✔ PHP installed successfully!\n"
+    else
+      red "⚠ PHP is required to proceed. Exiting..."
+      exit 1
+    fi
+  fi
+  sleep 1
+
+  # Check MySQL installation
+  blue "➔ Checking if MySQL is installed..."
+  space
+  sleep 1
+
+  if command -v mysql >/dev/null 2>&1; then
+    green "✔ MySQL is installed\n"
+  else
+    red "✘ MySQL is not installed!"
+    read -p "👉 Would you like to install MySQL now? (y/n): " choice
+    if [[ "$choice" =~ ^[yY]$ ]]; then
+      yellow "🚀 Installing MySQL..."
+      apt install phpmyadmin -y
+      until command -v mysql >/dev/null 2>&1; do
+        sleep 1
+      done
+      green "✔ MySQL installed successfully!\n"
+    else
+      red "⚠ MySQL is required to proceed. Exiting..."
+      exit 1
+    fi
+  fi
+  sleep 1
+
+  # Check MariaDB installation
+  blue "➔ Checking if MariaDB is installed..."
+  space
+  sleep 1
+
+  if command -v mariadb >/dev/null 2>&1; then
+    green "✔ MariaDB is installed\n"
+  else
+    red "✘ MariaDB is not installed!"
+    read -p "👉 Would you like to install MariaDB now? (y/n): " choice
+    if [[ "$choice" =~ ^[yY]$ ]]; then
+      yellow "🚀 Installing MariaDB..."
+      apt install mariadb -y
+      until command -v mariadb >/dev/null 2>&1; do
+        sleep 1
+      done
+      green "✔ MariaDB installed successfully!\n"
+    else
+      red "⚠ MariaDB is required to proceed. Exiting..."
+      exit 1
+    fi
+  fi
+  sleep 1
+
+  green "🎉 All dependencies are installed! Preparing Phantom-PHP...\n"
+  sleep 1
+
+  yellow "🚀 Setting up Phantom-PHP...\n"
+  sleep 1
+createSymlink
+sleep 1
+  blue "🛠 Initializing phpMyAdmin server...\n"
+  sleep 1
+  cd || exit
+  mysql_install_db &>/dev/null
+  mariadbd-safe -u root &>/dev/null &
+
+  if cd ../usr/share/phpmyadmin &>/dev/null; then
+    green "✔ Navigated to phpMyAdmin directory"
+  else
+    red "✘ phpMyAdmin directory not found!"
+    exit 1
+  fi
+
+  if [ -f "config.inc.php" ]; then
+    yellow "⚠ config.inc.php file already exists. Replacing..."
+    rm config.inc.php &>/dev/null
+  fi
+  yellow "📄 Creating a new config.inc.php file..."
+  
+cat <<EOF > config.inc.php
+<?php
+/**
+ * phpMyAdmin sample configuration, you can use it as base for
+ * manual configuration. For easier setup you can use setup/
+ *
+ * All directives are explained in documentation in the doc/ folder
+ * or at <https://docs.phpmyadmin.net/>.
+ */
+
+declare(strict_types=1);
+
+/**
+ * This is needed for cookie-based authentication to encrypt the cookie.
+ * Needs to be a 32-bytes long string of random bytes. See FAQ 2.10.
+ */
+\$cfg['blowfish_secret'] = 'YOUR_RANDOM_32_BYTE_STRING_HERE'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+
+/**
+ * Servers configuration
+ */
+\$i = 0;
+
+/**
+ * First server
+ */
+\$i++;
+/* Authentication type */
+\$cfg['Servers'][\$i]['auth_type'] = 'cookie';
+/* Server parameters */
+\$cfg['Servers'][\$i]['host'] = '127.0.0.1';
+\$cfg['Servers'][\$i]['compress'] = false;
+\$cfg['Servers'][\$i]['AllowNoPassword'] = true;
+
+/**
+ * phpMyAdmin configuration storage settings.
+ */
+
+/* User used to manipulate with storage */
+// \$cfg['Servers'][\$i]['controlhost'] = '';
+// \$cfg['Servers'][\$i]['controlport'] = '';
+// \$cfg['Servers'][\$i]['controluser'] = 'pma';
+// \$cfg['Servers'][\$i]['controlpass'] = 'pmapass';
+
+/* Storage database and tables */
+// \$cfg['Servers'][\$i]['pmadb'] = 'phpmyadmin';
+// \$cfg['Servers'][\$i]['bookmarktable'] = 'pma__bookmark';
+// \$cfg['Servers'][\$i]['relation'] = 'pma__relation';
+// \$cfg['Servers'][\$i]['table_info'] = 'pma__table_info';
+// \$cfg['Servers'][\$i]['table_coords'] = 'pma__table_coords';
+// \$cfg['Servers'][\$i]['pdf_pages'] = 'pma__pdf_pages';
+// \$cfg['Servers'][\$i]['column_info'] = 'pma__column_info';
+// \$cfg['Servers'][\$i]['history'] = 'pma__history';
+// \$cfg['Servers'][\$i]['table_uiprefs'] = 'pma__table_uiprefs';
+// \$cfg['Servers'][\$i]['tracking'] = 'pma__tracking';
+// \$cfg['Servers'][\$i]['userconfig'] = 'pma__userconfig';
+// \$cfg['Servers'][\$i]['recent'] = 'pma__recent';
+// \$cfg['Servers'][\$i]['favorite'] = 'pma__favorite';
+// \$cfg['Servers'][\$i]['users'] = 'pma__users';
+// \$cfg['Servers'][\$i]['usergroups'] = 'pma__usergroups';
+// \$cfg['Servers'][\$i]['navigationhiding'] = 'pma__navigationhiding';
+// \$cfg['Servers'][\$i]['savedsearches'] = 'pma__savedsearches';
+// \$cfg['Servers'][\$i]['central_columns'] = 'pma__central_columns';
+// \$cfg['Servers'][\$i]['designer_settings'] = 'pma__designer_settings';
+// \$cfg['Servers'][\$i]['export_templates'] = 'pma__export_templates';
+
+/**
+ * End of servers configuration
+ */
+
+/**
+ * Directories for saving/loading files from server
+ */
+\$cfg['UploadDir'] = '';
+\$cfg['SaveDir'] = '';
+
+EOF
+
+  if [ $? -eq 0 ]; then
+    green "✔ phpMyAdmin setup completed successfully!"
+  else
+    red "✘ Failed to create config.inc.php file."
+    exit 1
+  fi
+
+  green "🎉 Phantom-PHP installation complete! Ready to use!"
+}
+createSymlink() {
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  green "      Setting up PhantomPHP       "
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  space
+
+  blue "➔  Checking if 'phantomphp' folder exists..."
+  sleep 1
+  if [[ ! -d "$HOME/phantomphp" ]]; then
+    red "✘  Error: 'phantomphp' folder not found in the home directory."
+    return 1
+  fi
+  green "✔  Found 'phantomphp' folder."
+  space
+
+  # Check if PhantomPHP script is executable
+  blue "➔  Verifying 'PhantomPHP' script permissions..."
+  sleep 1
+  if [[ ! -x "$HOME/phantomphp/bin/phantom" ]]; then
+    yellow "⚠  'PhantomPHP' is not executable. Fixing permissions..."
+    chmod +x "$HOME/phantomphp/bin/phantom"
+    if [[ $? -ne 0 ]]; then
+      red "✘  Error: Failed to make 'PhantomPHP' executable."
+      return 1
+    fi
+    green "✔  'PhantomPHP' is now executable."
+  else
+    green "✔  'PhantomPHP' is already executable."
+  fi
+  space
+
+  # Check or create the symlink
+  blue "➔  Checking if symlink exists in '$HOME/bin'..."
+  sleep 1
+  if [[ ! -L "$HOME/bin/phantom" ]]; then
+    yellow "⚠  Symlink not found. Creating symlink for 'PhantomPHP'..."
+    ln -s "$HOME/phantomphp/bin/phantom" "$HOME/bin/phantom"
+    if [[ $? -eq 0 ]]; then
+      green "✔  Symlink created: $HOME/bin/phantom"
+    else
+      red "✘  Error: Failed to create symlink."
+      return 1
+    fi
+  else
+    yellow "⚠  Symlink already exists: $HOME/bin/phantom"
+  fi
+  space
+
+  # Add alias to ~/.bashrc
+  blue "➔  Checking for alias in '.bashrc'..."
+  sleep 1
+  if ! grep -q 'alias phantom=' ~/.bashrc; then
+    yellow "⚠  Alias for 'phantomphp' not found. Adding alias..."
+    echo 'alias sgit="$HOME/bin/phantomphp"' >> ~/.bashrc
+    green "✔  Alias added to '.bashrc'."
+  else
+    yellow "⚠  Alias for 'phantom' already exists in '.bashrc'."
+  fi
+  space
+
+  # Reload bash configuration
+  blue "➔  Applying changes to shell..."
+  sleep 1
+  source ~/.bashrc
+  if [[ $? -eq 0 ]]; then
+    green "✔  All changes applied successfully. PhantomPHP is ready to use!"
+  else
+    red "✘  Error: Failed to reload '.bashrc'."
+  fi
+  space
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  green "       PhantomPHP setup complete!        "
+  green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  space
+}
+
+install_server

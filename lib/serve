@@ -1,0 +1,85 @@
+#!/bin/bash
+source "$BASEDIR/config"
+source "$BASEDIR/lib/portForward"
+serve() {
+    validate_port
+    if [ ! -d "$HOME/phantomphp/logs" ]; then
+        green "➔ Logs directory not found. Creating 'logs' directory..."
+        mkdir -p "$HOME/phantomphp/logs"
+    fi
+
+    if [ ! -f "$SERVER_LOG" ]; then
+        touch "$SERVER_LOG"
+    fi
+
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    green "       Starting PhantomPHP Server...       "
+    green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    space
+    green "➔ Serving app at: ${CYAN}http://localhost:$PORT${NC}"
+    space
+    green "➔ Serving files from: ${CYAN}$DIRECTORY${NC}"
+    space
+
+    # Start the server
+    php -S localhost:$PORT -t "$DIRECTORY" &> "$SERVER_LOG" &
+    server_pid=$!
+
+    sleep 1
+
+    if ps -p $server_pid > /dev/null; then
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        green "➔ PHP server started successfully!         ✔"
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        green "➔ You can now access the app at: ${CYAN}http://localhost:$PORT${NC}"
+        space
+       open_browser
+        grey "Opening in the default browser..."
+        sleep 3
+        space
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo -e "${CYAN}| Press [F] or [f] to forward the port"
+        echo -e "${CYAN}| Press [Q] or [q] to stop the server"
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        space
+
+    else
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ Failed to start PHP server on port $PORT."
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ It may be in use. Try a different port or check server_log.txt for details."
+        cat "$SERVER_LOG"
+        exit 1
+    fi
+
+    while true; do
+        read -n1 -s input
+        case "$input" in
+            [Qq])
+                red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                red "➔ Stopping PHP server..."
+                red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                kill $server_pid
+                wait $server_pid 2>/dev/null
+                green "➔ PHP server stopped successfully."
+                exit 0
+                ;;
+            [Ff])
+                port_forwarding
+                ;;
+            *)
+                grey "➔ Unknown command. Press [Q] or [q] to stop, [F] or [f] to forward."
+                ;;
+        esac
+    done
+}
+
+open_browser() {
+    if command -v xdg-open &> /dev/null; then
+        xdg-open "http://localhost:$PORT"
+    elif command -v termux-open &> /dev/null; then
+        termux-open "http://localhost:$PORT"
+    else
+        echo -e "${RED}Error: No compatible browser open command found.${NC}"
+    fi
+}

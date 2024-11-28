@@ -1,0 +1,5 @@
+ #!/bin/bash
+PORT=8000
+DIRECTORY=$(pwd)
+SSH_OUTPUT_FILE="$HOME/PhantomPHP_ssh_output.txt"
+SERVER_LOG="$HOME/phantomphp/logs/PhantomPHP_server_log.txt"

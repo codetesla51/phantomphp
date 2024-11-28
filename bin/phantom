@@ -1,0 +1,11 @@
+#!/bin/bash
+BASEDIR="$HOME/phantomphp"
+source "$BASEDIR/lib/help";
+source "$BASEDIR/lib/serve"
+source "$BASEDIR/lib/runPHP"
+source "$BASEDIR/lib/portForward"
+source "$BASEDIR/lib/phpMyAdmin"
+source "$BASEDIR/helper/validate_port"
+source "$BASEDIR/utils/flags"
+source "$BASEDIR/utils/echo"
+source "$BASEDIR/config"

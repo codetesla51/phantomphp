@@ -1,0 +1,44 @@
+#!/bin/bash
+source "$BASEDIR/config"
+
+mysql_db() {
+    cd || exit
+
+    if ! cd ../usr/share/phpmyadmin; then
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ Error: /usr/share/phpmyadmin not found ${NC}"
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        return 1
+    fi
+    
+    port="${PORT:-8080}"
+    
+    mysql_install_db &> /dev/null
+    mariadbd-safe -u root &> /dev/null &
+    yellow "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    green "➔ Attempting to start phpMyAdmin server at http://localhost:$port ${NC}"
+    yellow "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    space
+    php -S localhost:"$port" &> "$SERVER_LOG" &
+    server_pid=$!
+    sleep 1
+
+    if ps -p $server_pid > /dev/null; then
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        green "➔ phpMyAdmin server started at http://localhost:$port ✔"
+        green "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        space
+        green "➔ Server running at http://localhost:$port  Press [Ctrl+C] to stop."
+        space
+
+        # Keep the server running indefinitely
+        while true; do
+            sleep 60  # Check every minute
+        done
+    else
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        red "➔ Failed to start the server on port $port. It may be in use. Try a different port or check server_log.txt for details. ${NC}"
+        red "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        cat "$SERVER_LOG"
+    fi
+}

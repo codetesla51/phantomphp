@@ -1,0 +1,4 @@
+[Thu Nov 28 06:13:39 2024] PHP 8.3.10 Development Server (http://localhost:8000) started
+[Thu Nov 28 06:13:44 2024] 127.0.0.1:40108 Accepted
+[Thu Nov 28 06:13:44 2024] 127.0.0.1:40108 [404]: GET / - No such file or directory
+[Thu Nov 28 06:13:44 2024] 127.0.0.1:40108 Closing
