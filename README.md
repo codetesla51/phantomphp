@@ -81,7 +81,7 @@ To install PhantomPHP on your Android device, you’ll need the following prereq
     pkg update
     pkg upgrade
     pkg install git
-    git clone https://github.com/your-username/phantomphp.git
+    git clone https://github.com/codetesla51/phantomphp.git
     cd phantomphp
     chmod +x install
     ./install
