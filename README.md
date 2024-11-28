@@ -78,15 +78,11 @@ To install PhantomPHP on your Android device, you’ll need the following prereq
 2. Open Termux and run the following commands to clone the PhantomPHP repository, set the appropriate permissions, and run the installation script:
 
     ```bash
-    pkg update
-    pkg upgrade
-    pkg install git
     git clone https://github.com/codetesla51/phantomphp.git
     cd phantomphp
     chmod +x install
     ./install
     ```
-
    This will clone the PhantomPHP repository, navigate into the project directory, set execute permissions for the installation script, and run it to complete the setup.
 
 

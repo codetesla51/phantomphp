@@ -47,7 +47,7 @@ grey "########################################"
         SERVE=false
     space
       grey "Opening GitHub Repository..."
-      if ! xdg-open "https://github.com/codetesla51/phantom-php" &> /dev/null; then
+      if ! xdg-open "https://github.com/codetesla51/phantomphp.git" &> /dev/null; then
         red "Failed to open GitHub repository."
       fi
       exit 0
