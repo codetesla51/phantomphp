@@ -1,210 +1,165 @@
+
 <div align="center">
-  <h1>PHANTOMPHP</h1>
-  <img src="https://img.shields.io/badge/version-1.0-blue" alt="Version">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+
+# PhantomPHP
+
+**A Powerful PHP Development Server for Termux**
+
+[![Version](https://img.shields.io/badge/version-1.0-blue?style=for-the-badge)](https://github.com/codetesla51/phantomphp/releases)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D7.4-purple?style=for-the-badge)](https://php.net)
+
+---
+
+Run PHP & MySQL applications directly from your Android device
+
 </div>
 
+## Features
 
+<table>
+<tr>
+<td width="50%">
 
+**Development Tools**
+- PHP server with live reload
+- Direct file execution
+- Custom port selection
+- Automatic installation
+</td>
+<td width="50%">
 
----
+**Database Integration**
+- Built-in MySQL support
+- phpMyAdmin interface
+- Database management tools
+- Secure connections
+</td>
+</tr>
+</table>
 
-## Table of Contents
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Installing PhantomPHP](#installing-phantomphp)
-  - [Installation Requirements](#installation-requirements)
-  - [Installation Steps](#installation-steps)
-- [Usage](#usage)
-  - [Serving](#serving)
-  - [Port Selection](#port-selection)
-  - [Port Forwarding](#port-forwarding)
-  - [Direct File Running in PHP](#direct-file-running-in-php)
-  - [Further Help](#further-help)
-- [Contributing](#contributing)
-- [License](#license)
+## Prerequisites
 
----
+**Required Software:**
+- Termux ([F-Droid](https://f-droid.org) | [GitHub](https://github.com/termux/termux-app/releases))
+- PHP 7.4 or higher
+- Composer
+- MariaDB
+- phpMyAdmin
 
-## Overview
+## Installation
 
-**PhantomPHP** is a PHP web server designed for use with the Termux terminal, enabling you to run and share PHP and MySQL applications directly from your mobile device. It’s built to provide fast performance, high reliability, and seamless integration with MySQL databases, offering a powerful solution for dynamic web development on the go.
-## Key Features
-
-- **PHP Serving**: Run PHP files directly from Acode.
-- **Port Forwarding**: Share your local server with others securely.
-- **Direct PHP File Execution**: Execute files without additional configuration.
-- **Seamless Fast Auto Installation Integration**: Quick automatic setup, you don't have to do much.
-- **MySQLi and phpMyAdmin Support**: Manage databases with ease.
-- **Custom Port Selection**: Choose your preferred port.
-- **User-Friendly Interface**: Optimized for ease of use.
-
----
-
-## Installing PhantomPHP
-
-To install PhantomPHP on your Android device, you’ll need the following prerequisites:
-
-### Installation Requirements
-
-1. **Termux**:  
-   A powerful Linux terminal emulator for Android, available on [F-Droid](https://f-droid.org) and [GitHub](https://github.com/termux/termux-app/releases).  
-   This will allow you to run a Linux environment on your Android device.
-
-
-2. **PHP (version 7.4 or above)**:  
-   Installable via Termux.  
-   PHP is required for running server-side scripts and applications.
-
-3. **Composer**:  
-   A PHP package manager used for handling dependencies and libraries in PHP projects.  
-   You can install Composer in Termux to manage PHP packages.
-
-4. **MariaDB**:  
-   A popular open-source database management system, forked from MySQL.  
-   Required for managing databases in your projects.
-
-5. **phpMyAdmin**:  
-   A web-based tool for managing MySQL and MariaDB databases.  
-   It provides an easy-to-use interface for database administration.
-
-### Installation Steps
-
-1. **Install Termux**:
-   - Download and install Termux from [F-Droid](https://f-droid.org) or the [Termux GitHub releases page](https://github.com/termux/termux-app/releases).
-
-## Clone Repository
-
-2. Open Termux and run the following commands to clone the PhantomPHP repository, set the appropriate permissions, and run the installation script:
-
-    ```bash
-    git clone https://github.com/codetesla51/phantomphp.git
-    cd phantomphp
-    chmod +x install
-    ./install
-    ```
-   This will clone the PhantomPHP repository, navigate into the project directory, set execute permissions for the installation script, and run it to complete the setup.
-
-
-## Verify installation
-
-4. After running the previous step to clone and install PhantomPHP, verify the installation by running the following command:
-
-    ```bash
-    phantom -v
-    ```
-
-## Access phpMyAdmin
-
-5. Use the `phantom` command to start the PHP server for phpMyAdmin access. Replace `<port>` with the desired port number (e.g., 8080):
-
-    ```bash
-    phantom --db <port>
-    ```
-
-   Once started, you can access phpMyAdmin in your browser by navigating to:
-
-    ```
-    http://localhost:<port>
-    ```
-
-   **Default Credentials**:  
-   - **Username**: `root`  
-   - **Password**: `root`
-
-
-Now, you should be able to access phpMyAdmin through your browser by navigating to `http://localhost:<port>`.
- 
----
-### Usage
-**Basic Usage Outline for PhantomPHP Server**
-
-### Serving
-This is the basic way to serve your PHP project. It will run a local server with the default port 8000.
-
-**example:**
+1. **Install PhantomPHP:**
 ```bash
-cd /path/to/your-project-directory
-phantom --serve
+git clone https://github.com/codetesla51/phantomphp.git
+cd phantomphp
+chmod +x install
+./install
 ```
----
-### Port Selection
-In case the default port 8000 is already in use, you can change the port by using the -p option followed by your desired port number (e.g., 8080).
 
-**example**
+2. **Verify Installation:**
 ```bash
+phantom -v
+```
+
+## Usage Guide
+
+### Start PHP Server
+```bash
+# Default port (8000)
+phantom --serve
+
+# Custom port
 phantom --serve 8080
 ```
-#### This will run the local server on the selected port.
----
-### phpMyAdmin Initialization
 
-To start both MySQL and phpMyAdmin for database interaction, you can specify a
-custom port with the `--db` flag. In this example, we use port 8880. If the port
-is already in use, the server will not run.
-
-**Example**:
-
+### Access Database
 ```bash
-phantom --db 8880
+# Start phpMyAdmin
+phantom --db 8080
+
+# Access at: http://localhost:8080
+# Username: root
+# Password: root
 ```
-This will start the MySQL server and phpMyAdmin on port 8880. If the port is already in use, the server will not run.
 
-You can access phpMyAdmin in your browser by navigating to:
-```
-http://localhost:8880
-```
-Default Credentials:
-   -  Username: root
-   - Password: root
----
-### Port Forwarding
-
-Want to share your work with your team or friends? PhantomPHP allows you to forward your local server port and share it with others, including SSL certification for a secure connection. Use the `-f` flag to enable port forwarding.
-
-**Example**:
-
+### Run PHP Files
 ```bash
-phantom -serve 8080
-```
-This will run the local server on port 8080. After serving, the server will read options. Press F (or f) to enable port forwarding and allow others to access your server.
-This will forward the port for others to access your application securely.
-### Direct File Running in PHP
+# Run a PHP file
+phantom --run filename
 
-To quickly run your PHP file and get immediate output, you can use the following command without needing to add the `.php` extension. Simply provide the filename.
-
-**Usage Example:**
-```bash
-phantom -run filename
-```
-#### For instance:
-```bash
+# Example
 phantom --run init
 ```
-#### This will run the init.php file.
----
-### Need Further Help?
 
-If you're still having trouble, you can contact the repository owner or contributors for assistance. You can also email your issue to:
-
-**Email:** uoladele99@gmail.com, 
-
-For additional command options, you can view the help menu with:
+### Port Forwarding
 ```bash
-phantom --help
+# Start server with forwarding
+phantom --serve 8080
+
+# Press 'F' when prompted to enable forwarding
 ```
----
+
+## Command Reference
+
+<table>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>--serve [port]</code></td>
+<td>Start PHP server (default: 8000)</td>
+</tr>
+<tr>
+<td><code>--db [port]</code></td>
+<td>Launch phpMyAdmin interface</td>
+</tr>
+<tr>
+<td><code>--run [file]</code></td>
+<td>Execute PHP file directly</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Display version information</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>Show help menu</td>
+</tr>
+</table>
+
+## Security Notes
+
+- Always use strong passwords for database access
+- Enable port forwarding only when necessary
+- Keep Termux and all components updated
+- Use HTTPS when possible
+
+## Support
+
+Need help? Contact us:
+- Email: uoladele99@gmail.com
+- GitHub Issues: [Open an issue](https://github.com/codetesla51/phantomphp/issues)
+
 ## Contributing
 
-We welcome contributions! If you'd like to improve or fix something, please open an issue to start a discussion. Once your idea is approved, feel free to submit a pull request.
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Submit a pull request
 
 ## License
 
-<h4>This project is licensed under the **MIT License**, which allows you to
-freely use, modify, and distribute the code. See the `LICENSE` file for full
-details.</h4>
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+<div align="center">
 
 ---
-## Leave a Star ⭐
 
-If you find **PhantomPHP Server** useful, please consider leaving a star on the repository! Your support helps others discover the project and motivates us to keep improving it.
+**Found PhantomPHP helpful? Leave a star to show your support!**
+
+[⭐ Star on GitHub](https://github.com/codetesla51/phantomphp)
+
+</div>
