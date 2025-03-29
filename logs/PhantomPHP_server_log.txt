@@ -1,1 +1,211 @@
-[Fri Dec 27 09:48:56 2024] PHP 8.3.10 Development Server (http://localhost:3846) started
+[Sat Mar 29 11:47:00 2025] PHP 8.4.2 Development Server (http://localhost:3436) started
+[Sat Mar 29 11:47:07 2025] 127.0.0.1:49898 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49898 [200]: GET /
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49898 Closing
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49906 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49914 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49928 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49940 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49946 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49960 Accepted
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49906 [200]: GET /themes/pmahomme/jquery/jquery-ui.css
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49914 [200]: GET /js/vendor/codemirror/lib/codemirror.css?v=5.2.2
+[Sat Mar 29 11:47:09 2025] 127.0.0.1:49928 [200]: GET /js/vendor/codemirror/addon/hint/show-hint.css?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49940 [200]: GET /js/vendor/codemirror/addon/lint/lint.css?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49946 [200]: GET /themes/pmahomme/css/theme.css?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49960 [200]: GET /js/vendor/jquery/jquery.min.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49966 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49906 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49914 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49966 [200]: GET /js/vendor/jquery/jquery-migrate.min.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49976 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49928 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49940 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49960 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49966 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49946 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49992 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50004 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49976 [200]: GET /js/vendor/sprintf.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49992 [200]: GET /js/dist/ajax.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50004 [200]: GET /js/dist/keyhandler.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49976 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:49992 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50004 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50018 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50026 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50036 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50052 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50062 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50018 [200]: GET /js/vendor/jquery/jquery-ui.min.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50026 [200]: GET /js/dist/name-conflict-fixes.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50036 [200]: GET /js/vendor/bootstrap/bootstrap.bundle.min.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50052 [200]: GET /js/vendor/js.cookie.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50018 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50062 [200]: GET /js/vendor/jquery/jquery.validate.min.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50026 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50074 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50036 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50052 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50078 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50062 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50088 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50074 [200]: GET /js/vendor/jquery/jquery-ui-timepicker-addon.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50074 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50100 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50078 [200]: GET /js/vendor/jquery/jquery.debounce-1.0.6.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50088 [200]: GET /js/dist/menu_resizer.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50078 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50088 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50116 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50100 [200]: GET /js/dist/cross_framing_protection.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50100 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50122 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50136 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50146 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50116 [200]: GET /js/messages.php?l=en&v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50116 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50156 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50122 [200]: GET /js/dist/config.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50136 [200]: GET /js/dist/doclinks.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50146 [200]: GET /js/dist/functions.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50168 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50156 [200]: GET /js/dist/navigation.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50168 [200]: GET /js/dist/indexes.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50182 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50122 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50136 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50156 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50146 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50168 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50186 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50196 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50182 [200]: GET /js/dist/common.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50186 [200]: GET /js/dist/page_settings.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50182 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50186 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50204 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50212 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50196 [200]: GET /js/dist/home.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50196 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50218 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50204 [200]: GET /js/vendor/codemirror/lib/codemirror.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50224 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50218 [200]: GET /js/vendor/codemirror/addon/runmode/runmode.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50212 [200]: GET /js/vendor/codemirror/mode/sql/sql.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50204 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50240 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50218 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50212 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50224 [200]: GET /js/vendor/codemirror/addon/hint/show-hint.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50224 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50244 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50250 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50240 [200]: GET /js/vendor/codemirror/addon/hint/sql-hint.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50240 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50244 [200]: GET /js/vendor/codemirror/addon/lint/lint.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50244 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50250 [200]: GET /js/dist/codemirror/addon/lint/sql-lint.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50250 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50254 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50262 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50270 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50280 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50292 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50254 [200]: GET /js/vendor/tracekit.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50262 [200]: GET /js/dist/error_report.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50254 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50270 [200]: GET /js/dist/drag_drop_import.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50262 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50270 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50280 [200]: GET /js/dist/shortcuts_handler.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50280 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50292 [200]: GET /js/dist/console.js?v=5.2.2
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50292 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50294 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50298 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50294 [200]: GET /themes/pmahomme/img/logo_left.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50294 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50298 [200]: GET /themes/dot.gif
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50298 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50310 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50322 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50332 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50338 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50348 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50350 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50310 [200]: GET /themes/pmahomme/img/b_home.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50322 [200]: GET /themes/pmahomme/img/s_loggoff.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50310 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50322 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50332 [200]: GET /themes/pmahomme/img/b_docs.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50332 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50338 [200]: GET /themes/pmahomme/img/b_sqlhelp.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50338 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50348 [200]: GET /themes/pmahomme/img/s_cog.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50350 [200]: GET /themes/pmahomme/img/s_reload.png
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50348 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50350 Closing
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50364 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50368 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50382 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50390 Accepted
+[Sat Mar 29 11:47:10 2025] 127.0.0.1:50402 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50410 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50364 [200]: GET /themes/pmahomme/img/b_plus.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50368 [200]: GET /themes/pmahomme/img/s_db.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50382 [200]: GET /themes/pmahomme/img/s_collapseall.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50390 [200]: GET /themes/pmahomme/img/s_link.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50402 [200]: GET /themes/pmahomme/img/b_newdb.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50410 [200]: GET /themes/pmahomme/img/s_host.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50364 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50368 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50382 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50390 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50402 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50410 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50414 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50418 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50426 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50436 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50446 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50450 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50414 [200]: GET /themes/pmahomme/img/s_top.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50418 [200]: GET /themes/pmahomme/img/console.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50414 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50418 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50426 [200]: GET /themes/pmahomme/img/s_passwd.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50436 [200]: GET /themes/pmahomme/img/s_asci.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50446 [200]: GET /themes/pmahomme/img/b_tblops.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50426 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50436 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50454 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50446 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50450 [200]: GET /themes/pmahomme/img/b_help.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50450 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50470 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50454 [200]: GET /themes/pmahomme/img/s_lang.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50454 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50470 [200]: GET /themes/pmahomme/img/s_theme.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50470 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50486 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50498 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50514 Accepted
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50486 [200]: GET /themes/pmahomme/img/s_attention.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50486 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50498 [200]: GET /themes/pmahomme/img/s_notice.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50498 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50514 [200]: GET /themes/pmahomme/img/window-new.png
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50514 Closing
+[Sat Mar 29 11:47:11 2025] 127.0.0.1:50524 Accepted
+[Sat Mar 29 11:47:12 2025] 127.0.0.1:50524 [200]: POST /index.php?route=/config/get
+[Sat Mar 29 11:47:12 2025] 127.0.0.1:50524 Closing
+[Sat Mar 29 11:47:12 2025] 127.0.0.1:50538 Accepted
+[Sat Mar 29 11:47:12 2025] 127.0.0.1:50544 Accepted
+[Sat Mar 29 11:47:12 2025] 127.0.0.1:50538 [200]: POST /index.php?route=/navigation&ajax_request=1
+[Sat Mar 29 11:47:13 2025] 127.0.0.1:50538 Closing
+[Sat Mar 29 11:47:13 2025] 127.0.0.1:50548 Accepted
+[Sat Mar 29 11:47:13 2025] 127.0.0.1:50544 [200]: POST /index.php?route=/config/get
+[Sat Mar 29 11:47:13 2025] 127.0.0.1:50544 Closing
+[Sat Mar 29 11:47:14 2025] 127.0.0.1:50548 [200]: POST /index.php?route=/version-check
+[Sat Mar 29 11:47:14 2025] 127.0.0.1:50548 Closing

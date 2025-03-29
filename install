@@ -207,10 +207,19 @@ sleep 1
 
   if cd ../usr/share/phpmyadmin &>/dev/null; then
     green "✔ Navigated to phpMyAdmin directory"
-  else
+    mkdir -p ../usr/share/phpmyadmin/etc/php
+    
+    echo 'error_reporting = 0' >> ../usr/share/phpmyadmin/etc/php/php.ini
+    
+    # Check if error_reporting is properly set in php.ini
+    if grep -q "error_reporting = 0" ../usr/share/phpmyadmin/etc/php/php.ini; then
+    else
+        exit 1
+    fi
+else
     red "✘ phpMyAdmin directory not found!"
     exit 1
-  fi
+fi
 
   if [ -f "config.inc.php" ]; then
     yellow "⚠ config.inc.php file already exists. Replacing..."
